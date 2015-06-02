@@ -7,7 +7,7 @@ int main()
 	FILE* inputfile = fopen("inputfile","r");
 	FILE* resultfile = fopen("resultfile","w");
 	int a = 0;
-	int num = fread(&a,sizeof(char),1,inputfile);
+	int num = fread(&a,sizeof(char),1,inputfile);//注意这里，文件中采用ansi编码存的数字是一个字节，所以sizeof(char),逐个字节复制。
 	while(num>0)
 	{
 		fwrite(&a,sizeof(char),1,resultfile);
