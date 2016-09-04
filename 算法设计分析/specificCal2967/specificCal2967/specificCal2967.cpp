@@ -37,8 +37,7 @@ int calculateDay(int day,int month,int year)
 }
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int n,hour,minute,second,day,month,year,mhour,mminute,msecond,mday,mmonth,myear;
-	long days,seconds;
+	int n,hour,minute,second,day,month,year,mhour,mminute,msecond,mday,mmonth,myear,days;
 	cin>>n;
 	while(n--)
 	{
@@ -52,23 +51,12 @@ int _tmain(int argc, _TCHAR* argv[])
 		days -= (mmonth-1)*100;
 		mday = days+1;
 		
-		//cout<<mday<<"  "<<mmonth<<" "<<myear<<endl;
+		cout<<mday<<"  "<<mmonth<<" "<<myear<<endl;
 
-		seconds = hour*3600+minute*60+second;
-		seconds = seconds*1000/864;
-		cout<<seconds;
-
-		mhour = seconds/10000;
-		seconds -= 10000*mhour;
-		mminute = seconds/100;
-		seconds -= 100*mminute;
-		msecond =seconds;
-		//cout<<mhour<<"  "<<mminute<<" "<<msecond<<endl;
-
-		cout<<mhour<<":"<<mminute<<":"<<msecond<<" "<<mday<<"."<<mmonth<<"."<<myear<<endl;
 	}
 	
 
 
 	return 0;
 }
+
